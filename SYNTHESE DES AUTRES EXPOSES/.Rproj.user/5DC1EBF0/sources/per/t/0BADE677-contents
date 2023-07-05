@@ -1,0 +1,23 @@
+## QUARTO
+
+Quarto nous donne la possibilité de faire des documents sous les fichiers Word, html et PDF mais aussi de faire des présentations sous fichier beamer etc. Avec Quarto il n'est pas nécessaire de générer un document en utilisant des codes contrairement à R Markdown. Cela est tout à fait possible avec les fonctionnalités de Quarto (en cliquant simplement). Il offre une interface visuel et source (pour les codes). Quarto utilise knitr pour exécuter du code R tout comme R Markdown.
+
+Il utilise différents langages de programmation tels que python, R, JavaScript qu'il est possible d'exploiter.
+
+Pour faire un document avec Quarto on a la possibilité :
+
+-   De mettre différents niveaux de titres
+
+-   D'appliquer un style sur le texte et faire différente mise en forme du texte.
+
+-   D'insérer des graphiques, des diagrammes, des images, des sauts de page, des équations (Latexmath), des caractères, emojis etc.,
+
+-   D'insérer des références bibliographiques (en précisant le DOI c'est-à-dire l'identifiant de l'article en ligne)
+
+-   On peut insérer des liens hypertexte vers des équations mathématiques, des tableaux, des figures ou des titres en précisant l'identifiant de ces derniers.
+
+-   Avec Quarto on a aussi la possibilité de faire des présentations power point (ou Reveal) où on peut faire des animations.
+
+-   Quarto permet enfin de créer facilement des contenus web comme des sites, des blogs, ou des livres en ligne.
+
+Bien évidemment Quarto offre de nombreuses autres possibilités qui n'attendent qu'à être explorée.

@@ -1,0 +1,13 @@
+# R Markdown
+
+R Markdown est un package intégrer à l'application Rstudio permettant de rédiger un document tel que des rapports, des articles, des mémoires, etc. à partir d'un code R et enregistré avec l'extension .Rmd. Le document RMarkdown sera généré sous les formats HTML, PDF ou Word. On utilise notamment les packages tels que : *knitr*, *dplyr*, *kabelExtra.*
+
+Un fichier R Markdown a principalement deux parties :
+
+-   L'entête comportant le titre du document écrit, le nom de l'auteur et la date de publication du document.
+
+-   Le corps qui est composé de deux parties : une partie où l'on saisit du texte et une autre (chunck) pour saisir du code. On a la possibilité de ne pas afficher de code dans le document final ainsi que les messages d'erreurs et d'avertissement.
+
+Les documents R Markdown : peuvent subir des mises en forme (mettre un texte en gras, italique, souligné, etc.) et on a la possibilité d'insérer différent niveau de titre, d'insérer des formules mathématiques (en utilisant un code latex encadre par des \$), insérer des codes dans la partie texte, d'intégrer des tableaux sur la partie texte de RMarckdown, de faire des mises en forme sur les différents tableaux, insérer des images (en pointant l'image par !). Avec R Markdown on a aussi la possibilité d'utiliser des modèles ou templates pour la création d'un document Rmd.
+
+R Markdown offre une multitude d'autres possibilités à explorer.Rmarkdown

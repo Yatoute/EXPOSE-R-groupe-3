@@ -1,0 +1,51 @@
+---
+title: "Calcul Parallèle"
+---
+
+## Introduction
+
+La plupart des traitements que nous effectuons suivent le principe du calcul séquentiel, où une tâche doit être exécutée avant que les autres ne soient déclenchées. Cependant, lorsqu'il s'agit de grandes bases de données, nous remarquons facilement la lenteur de l'ordinateur à exécuter les tâches demandées. Pour remédier à ces problèmes et accélérer les calculs, il est essentiel d'utiliser le calcul en parallèle.
+
+## Principes généraux
+
+1.  Découper le calcul informatique en blocs de calcul indépendants.
+2.  Exécuter simultanément (en parallèle) les blocs de calcul sur plusieurs unités de calcul.
+3.  Rassembler les résultats et les renvoyer.
+
+## Étapes du calcul en parallèle
+
+1.  Démarrer m processus "travailleurs" (c'est-à-dire les cœurs de calcul) et les initialiser.
+
+2.  Envoyer les fonctions et les données nécessaires à chaque tâche aux travailleurs.
+
+3.  Diviser les tâches en m opérations de taille similaire et les envoyer aux travailleurs.
+
+4.  Attendre que tous les travailleurs aient terminé leurs calculs et obtenu leurs résultats.
+
+5.  Rassembler les résultats des différents travailleurs.
+
+6.  Arrêter les processus des travailleurs.
+
+## Packages utilisés
+
+-   Package Parallel : inclus dans la distribution de base de R, il utilise des fonctions de la famille des apply.
+
+-   Package doParallel et Foreach.
+
+-   Package rmr2 (MapReduce).
+
+-   Et d'autres.
+
+## Quelques fonctions utiles :
+
+-   Detectcores() : permet de détecter le nombre de cœurs de la machine.
+
+-   Makecluster() : utilisé pour créer un cluster de travailleurs.
+
+-   Stopcluster() : utilisé pour arrêter et libérer les différents travailleurs.
+
+-   Les fonctions de la famille des apply, adaptées au calcul parallèle sous R, permettent d'exécuter simultanément des opérations sur différents blocs.
+
+-   parApplay() : effectue des calculs en parallèle sur une matrice ou un tableau en utilisant un cluster de travailleurs.
+
+-   parLapply() : applique une fonction à chaque élément d'une liste

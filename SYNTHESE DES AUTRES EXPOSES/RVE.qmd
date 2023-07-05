@@ -1,0 +1,57 @@
+# R vers Excel
+
+Pour manipuler des données entre R et Excel, plusieurs packages et fonctions sont utilisés. Ces packages et fonctions permettent d'importer des données depuis Excel vers R, d'exporter des données depuis R vers Excel, et de manipuler des fichiers Excel en effectuant des opérations telles que l'écriture de données, l'ajout d'en-têtes, de paragraphes, de tableaux et de graphiques dans les feuilles de calcul Excel.
+
+## Importation des données depuis Excel vers R :
+
+Package : readxl
+
+Fonction : read_excel()
+
+Exemple :
+
+```{r, eval = FALSE}
+data <- read_excel("chemin/vers/votre/fichier.xlsx", sheet = "nom_de_la_feuille")
+```
+
+## Exportation des données depuis R vers Excel :
+
+Package : writexl
+
+Fonction : write_xlsx()
+
+Exemple :
+
+```{r, eval = FALSE}
+write_xlsx(data, path = "chemin/vers/votre/fichier.xlsx")
+```
+
+Ce package fournit aussi la fonction **writeData()** permettant d'écrire des données dans un fichier Excel;
+
+## Manipulation avancée de fichiers Excel :
+
+Packages :
+
+**openxlsx, xlsx et r2excel:** ils permettent de lire, d'écrire et de manipuler des fichiers Excel (.xlsx)
+
+Principales onctions : Il existe de nombreuses fonctions dont quelques unes sont :
+
+**createWorkbook()** : Crée un nouveau fichier Excel.
+
+**addWorksheet()** : Ajoute une nouvelle feuille de calcul à un fichier Excel existant.
+
+**add_sheet()** : Ajoute une nouvelle feuille de calcul à un fichier Excel existant.
+
+**add_table()** : Ajoute un tableau formaté à une feuille de calcul Excel existante.
+
+**xlsx.addHeader()** : Ajoute un en-tête à une feuille de calcul Excel.
+
+**xlsx.addParagraph()** : Ajoute un paragraphe à une feuille de calcul Excel.
+
+**xlsx.addTable()** : Ajoute un tableau à une feuille de calcul Excel.
+
+**xlsx.addPlot()** : Ajoute un graphique à une feuille de calcul Excel.
+
+**xlsx::saveWorkbook()** : Enregistre le fichier Excel.
+
+**xlsx.openFile()** : Ouvre le fichier Excel

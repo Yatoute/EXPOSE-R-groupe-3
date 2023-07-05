@@ -1,0 +1,81 @@
+---
+title: "Application Shiny"
+author: "Groupe 7"
+date: "2023-06-24"
+output: ioslides_presentation
+runtime: shiny
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## ![](images/sortie.png)
+
+## Présentation shiny
+
+Shiny est un package R développé par RStudio qui permet de créer des applications web interactives. C'est une plateforme qui facilite la création d'interfaces utilisateur dynamiques pour analyser des données, afficher des graphiques, exécuter des modèles statistiques, et bien plus encore, le tout directement à partir de R.
+
+Avec Shiny, vous pouvez construire des applications web interactives sans avoir besoin de connaissances approfondies en HTML, CSS ou JavaScript.
+
+Shiny utilise un modèle ui-server : le serveur R exécute le code R et génère les sorties dynamiques, tandis que l'ui (navigateur web) affiche l'interface utilisateur et permet aux utilisateurs d'interagir avec l'application.
+
+## Interface utilisateur
+
+L'interface utilisateur contient tout ce qui est visible par l'utilisateur.
+
+Dans cette partie on utilise plusieurs fonctions
+
+-   **fluidPage** : Crée une page Shiny fluide qui s'adapte à la taille de la fenêtre du navigateur.
+
+-   **titlePanel** : Affiche un titre en haut de la page Shiny.
+
+-   **selectInput**: Crée un menu déroulant permettant à l'utilisateur de sélectionner une option parmi une liste.
+
+-   **sliderInput** : Crée un curseur coulissant permettant à l'utilisateur de sélectionner une valeur numérique dans une plage définie.
+
+## Interface utilisateur
+
+```{r eruptions}
+inputPanel(
+  selectInput("n_breaks", label = "Number of bins:",
+              choices = c(10, 20, 35, 50), selected = 20),
+  
+  sliderInput("bw_adjust", label = "Bandwidth adjustment:",
+              min = 0.2, max = 2, value = 1, step = 0.2)
+)
+
+```
+
+## Interface utilisateur
+
+-   **verbatimTextOutput** : Affiche du texte généré par le serveur dans l'interface utilisateur sans modification.
+
+-   **textInput**: Permet de créer un widget de saisie de texte dans une application Shiny.
+
+```{r}
+library(shiny)
+
+inputPanel(
+  textInput("input_text", "Saisir un texte"),
+  verbatimTextOutput("output_text"),
+)
+
+renderPrint({
+    input$input_text
+  })
+
+```
+
+## R Output
+
+```{r cars}
+summary(cars)
+```
+
+## Liens utiles
+Apprendre à développer des applications [shiny](https://shiny.posit.co/r/getstarted/) pas à pas
+
+Graphiques avec ggplot2 : [Lien_1](https://stt4230.rbind.io/communication_resultats/graphiques_ggplot2_r/) [Lien2](https://larmarange.github.io/analyse-R/graphiques-bivaries-ggplot2.html)
+
+pour la production : [Lien_1](https://engineering-shiny.org/) [lien_2](https://posit.co/blog/successfully-putting-shiny-in-production/)

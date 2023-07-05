@@ -1,0 +1,17 @@
+## GT_Summary
+
+-   **Intérêt** : GT_Summary a été développer dans l'objectif de faire d'évaluation d'impact. Il s'agit d'un package qui permet de créer et manipuler des tableaux statistiques et de faire des tris à plat.
+
+-   **Fonctions** : gtsummary permet notamment de :
+
+    -   Générer des tables de statistique récapitulative simples (en utilisant la fonction *tbl_summary()* ), sortir des tableaux croisés ( tbl_cross)
+
+    -   Combiner plusieurs variables ensemble (à l'aide des fonctions telles que *tbl_stack(), tbl_merge()* )
+
+    -   Produire des statistiques (telles que la moyenne, médiane l'écart-type) avec par exemple la fonction *tbl_continuous().*
+
+    -   Résumé des résultats de régression (en utilisant la fonction *tbl_regression()* )
+
+    -   Le package gtsummary peut aussi être combiner à Rmarkdown pour générer des rapports sous différents formats tel que html, word, pdf, rtf.
+
+    -   Changer les labels dans un tableau, et faire une mise en forme avec la fonction topack.  

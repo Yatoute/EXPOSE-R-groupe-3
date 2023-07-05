@@ -1,0 +1,550 @@
+---
+title: "Presentations avec Quarto"
+subtitle: "Créez de superbes diapositives interactives avec Reveal.js"
+format:
+  revealjs: 
+    slide-number: true
+    chalkboard: 
+      buttons: false
+    preview-links: auto
+    logo: images/quarto.png
+    css: styles.css
+
+resources:
+  - demo.pdf
+---
+
+## Bienvenue chez Quarto {.smaller}
+
+### Un système de publication scientifique et technique open source
+
+-   Créez à l'aide de blocs-notes Jupyter ou avec un démarqueur de texte brut dans votre éditeur préféré.
+-   Créez du contenu dynamique avec Python, R, Julia et Observable.
+-   Publiez des articles, des présentations, des sites Web, des blogs et des livres reproductibles et de qualité de production en HTML, PDF, MS Word, ePub, etc.
+-   Partagez vos connaissances et vos idées à l'échelle de l'organisation en publiant sur Posit Connect, Confluence ou d'autres systèmes de publication.
+-   Écrivez à l'aide de Pandoc markdown, y compris les équations, les citations, les références croisées, les panneaux de figures, les légendes, la mise en page avancée, etc.
+
+## Bonjour,
+
+Cette présentation vous montrera des exemples de ce que vous pouvez faire avec Quarto et [Reveal.js](https://revealjs.com) y compris:
+
+-   Présentation du code et des équations LaTeX
+-   Inclusion des calculs dans la sortie des diapositives
+-   Arrière-plans d'image, de vidéo et d'iframe
+-   Transitions et animations fantaisistes
+-   Impression au format PDF
+
+... et bien plus encore
+
+## Joli code {auto-animate="true"}
+
+-   Plus de 20 thèmes de coloration syntaxique disponibles
+-   Thème par défaut optimisé pour l'accessibilité
+
+``` r
+# Define a server for the Shiny app
+function(input, output) {
+  
+  # Fill in the spot we created for a plot
+  output$phonePlot <- renderPlot({
+    # Render a barplot
+  })
+}
+```
+
+::: footer
+Pour en savoir plus: [Syntax Highlighting](https://quarto.org/docs/output-formats/html-code.html#highlighting)
+:::
+
+## Code Animé {auto-animate="true"}
+
+-   Plus de 20 thèmes de coloration syntaxique disponibles
+-   Thème par défaut optimisé pour l'accessibilité
+
+``` r
+# Define a server for the Shiny app
+function(input, output) {
+  
+  # Fill in the spot we created for a plot
+  output$phonePlot <- renderPlot({
+    # Render a barplot
+    barplot(WorldPhones[,input$region]*1000, 
+            main=input$region,
+            ylab="Number of Telephones",
+            xlab="Year")
+  })
+}
+```
+
+::: footer
+Pour en savoir plus: [Code Animé](https://quarto.org/docs/presentations/revealjs/advanced.html#code-animations)
+:::
+
+## Mise en surbrillance des lignes
+
+-   Surlignez des lignes spécifiques pour mettre l'accent dessus
+-   Mettre en surbrillance incrémentielle des lignes supplémentaires
+
+``` {.python code-line-numbers="4-5|7|10"}
+import numpy as np
+import matplotlib.pyplot as plt
+r = np.arange(0, 2, 0.01)
+theta = 2 * np.pi * r
+fig, ax = plt.subplots(subplot_kw={'projection': 'polar'})
+ax.plot(theta, r)
+ax.set_rticks([0.5, 1, 1.5, 2])
+ax.grid(True)
+plt.show()
+```
+
+::: footer
+Pour en savoir plus: [Mise en surbrillance des lignes](https://quarto.org/docs/presentations/revealjs/#line-highlighting)
+:::
+
+## Code exécutable
+
+```{r}
+#| echo: true
+#| fig-width: 10
+#| fig-height: 4.5
+library(ggplot2)
+ggplot(mtcars, aes(hp, mpg, color = am)) +
+  geom_point() +
+  geom_smooth(formula = y ~ x, method = "loess")
+```
+
+::: footer
+Pour en savoir plus: [Code exécutable](https://quarto.org/docs/presentations/revealjs/#executable-code)
+:::
+
+## Equations LaTeX
+
+[MathJax](https://www.mathjax.org/) rendu des équations au format HTML
+
+::: columns
+::: {.column width="40%"}
+``` tex
+\begin{gather*}
+a_1=b_1+c_1\\
+a_2=b_2+c_2-d_2+e_2
+\end{gather*}
+\begin{align}
+a_{11}& =b_{11}&
+  a_{12}& =b_{12}\\
+a_{21}& =b_{21}&
+  a_{22}& =b_{22}+c_{22}
+\end{align}
+```
+:::
+
+::: {.column width="60%"}
+```{=tex}
+\begin{gather*}
+a_1=b_1+c_1\\
+a_2=b_2+c_2-d_2+e_2
+\end{gather*}
+```
+```{=tex}
+\begin{align}
+a_{11}& =b_{11}&
+  a_{12}& =b_{12}\\
+a_{21}& =b_{21}&
+  a_{22}& =b_{22}+c_{22}
+\end{align}
+```
+:::
+:::
+
+::: footer
+Pour en savoir plus: [Equations LaTeX](https://quarto.org/docs/authoring/markdown-basics.html#equations)
+:::
+
+## Disposition des colonnes {.smaller}
+
+Organisez le contenu en colonnes de différentes largeurs :
+
+::: columns
+::: {.column width="35%"}
+#### Essais routiers Motor Trend Car
+
+Les données ont été extraites du magazine américain Motor Trend de 1974 et comprennent la consommation de carburant et 10 aspects de la conception et de la performance automobiles de 32 automobiles.
+:::
+
+::: {.column width="3%"}
+:::
+
+::: {.column width="62%"}
+```{r}
+knitr::kable(head(mtcars)[,c("mpg",	"cyl", "disp", "hp", "wt")])
+```
+:::
+:::
+
+::: footer
+Pour en savoir plus: [Colonnes multiples](https://quarto.org/docs/presentations/revealjs/#multiple-columns)
+:::
+
+## Listes incrémentielles
+
+Les listes peuvent éventuellement être affichées de manière incrémentielle :
+
+::: incremental
+-   Premier point
+-   Deuxième point
+-   Troisième point
+:::
+
+. . .
+
+<br/> Insérez des pauses pour que d'autres types de contenu s'affichent de manière incrémentielle.
+
+------------------------------------------------------------------------
+
+\$%On peut choisir l'ordre de passage des fragments
+
+::: {.fragment fragment-index="3"}
+Troisième point
+:::
+
+::: {.fragment fragment-index="1"}
+Premier point
+:::
+
+::: {.fragment fragment-index="2"}
+Deuxième point
+:::
+
+::: footer
+Pour en savoir plus: [Incremental Lists](https://quarto.org/docs/presentations/revealjs/#incremental-lists)
+:::
+
+## Fragments
+
+Affichage et animation de texte incrémentiel avec fragments :
+
+<br/>
+
+::: {.fragment .fade-in}
+Fondu enchaîné
+:::
+
+::: {.fragment .fade-up}
+Glisser vers le haut en fondu enchaîné
+:::
+
+::: {.fragment .fade-left}
+Glisser vers la gauche lors de la fondu enchaîné
+:::
+
+::: {.fragment .fade-in-then-semi-out}
+Fondu enchaîné puis demi-sortant
+:::
+
+. . .
+
+::: {.fragment .strike}
+Frapper†
+:::
+
+::: {.fragment .highlight-red}
+Surbrillance rouge
+:::
+
+::: footer
+Pour en savoir plus: [Fragments](https://quarto.org/docs/presentations/revealjs/advanced.html#fragments)
+:::
+
+------------------------------------------------------------------------
+
+Nous pouvons aussi inserer les caracteres tels que:
+
+-   Les émojis.
+
+    Exemples: yannick 😀 aime 🍜
+
+-   les codes speciaux :
+
+    Exemples: ※ † »
+
+-   des notes
+
+    ::: callout-note
+    ## corollaire
+
+    le suite (Un)~n∊ℕ~ une suite positive
+    :::
+
+------------------------------------------------------------------------
+
+-   des notes de bas de pages[^test4-1]
+-   des commentaires visibles lors des presentations uniquement par le presentateur (...)
+
+[^test4-1]: Qu'est ce que vous en dites? juste magnifique n'est ce pas?
+
+::: notes
+Est-ce que tu me vois?
+:::
+
+<!--# toi même tu vois comment? -->
+
+## et si on allait a magicland {auto-animate="true"}
+
+::: {style="margin-top: 100px;"}
+Animation de contenu
+:::
+
+## et si on allait a magicland {auto-animate="true"}
+
+::: {style="margin-top: 200px; font-size: 3em; color: red;"}
+Animation de contenu
+:::
+
+## en glissant {transition="fade-in slide-out" auto-animate="true"}
+
+Animation
+
+## en glissant {auto-animate="true"}
+
+Implicit
+
+Animation
+
+## Arrière-plans des diapositives {background="#43464B"}
+
+Définissez l'attribut `background` sur une diapositive pour modifier la couleur d'arrière-plan (tous les formats de couleur CSS sont pris en charge).
+
+Différentes transitions d'arrière-plan sont disponibles via l'option:`background-transition`
+
+::: footer
+Pour en savoir plus: [Arrière-plans des diapositives](https://quarto.org/docs/presentations/revealjs/#color-backgrounds)
+:::
+
+## Arrière-plans médiatiques {background="#43464B" background-image="images/image1.jpg"}
+
+Vous pouvez également utiliser les éléments suivants comme arrière-plan de diapositive:
+
+-   une image: `background-image`
+
+-   une video: `background-video`
+
+-   un iframe: `background-iframe`
+
+::: footer
+Pour en savoir plus: [Arrière-plans médiatiques](https://quarto.org/docs/presentations/revealjs/#image-backgrounds)
+:::
+
+## Position absolue
+
+Positionnez des images ou d'autres éléments à des endroits précis
+
+![](images/image2.jpg){.absolute top="170" left="30" width="400" height="400"}
+
+![](images/image3.jpg){.absolute .fragment top="150" right="80" width="450"}
+
+![](images/image4.jpg){.absolute .fragment bottom="110" right="130" width="300"}
+
+::: footer
+Pour en savoir plus: [Absolute Position](https://quarto.org/docs/presentations/revealjs/advanced.html#absolute-position)
+:::
+
+## Auto-animé {auto-animate="true" auto-animate-easing="ease-in-out"}
+
+Animez automatiquement les éléments correspondants sur les diapositives avec Auto-Animate.
+
+::: r-hstack
+::: {data-id="box1" auto-animate-delay="0" style="background: #2780e3; width: 200px; height: 150px; margin: 10px;"}
+:::
+
+::: {data-id="box2" auto-animate-delay="0.1" style="background: #3fb618; width: 200px; height: 150px; margin: 10px;"}
+:::
+
+::: {data-id="box3" auto-animate-delay="0.2" style="background: #e83e8c; width: 200px; height: 150px; margin: 10px;"}
+:::
+:::
+
+::: footer
+Pour en savoir plus: [Auto-Animate](https://quarto.org/docs/presentations/revealjs/advanced.html#auto-animate)
+:::
+
+## Auto-Animé {auto-animate="true" auto-animate-easing="ease-in-out"}
+
+Animez automatiquement les éléments correspondants sur les diapositives avec Auto-Animate.
+
+::: r-stack
+::: {data-id="box1" style="background: #2780e3; width: 350px; height: 350px; border-radius: 200px;"}
+:::
+
+::: {data-id="box2" style="background: #3fb618; width: 250px; height: 250px; border-radius: 200px;"}
+:::
+
+::: {data-id="box3" style="background: #e83e8c; width: 150px; height: 150px; border-radius: 200px;"}
+:::
+:::
+
+::: footer
+Pour en savoir plus: [Auto-Animate](https://quarto.org/docs/presentations/revealjs/advanced.html#auto-animate)
+:::
+
+## Transitions de diapositives {.smaller}
+
+Les prochaines diapositives feront la transition à l'aide de la transition: `slide`
+
+| Transition | Description                                                                                         |
+|------------|-----------------------------------------------------------------------------------------------------|
+| `none`     | Aucune transition (par défaut, basculer instantanément)                                             |
+| `fade`     | Fondu enchaîné                                                                                      |
+| `slide`    | Faire glisser horizontalement                                                                       |
+| `convex`   | Glisser à un angle convexe                                                                          |
+| `concave`  | Glisser à un angle concave                                                                          |
+| `zoom`     | Mettez à l'échelle la diapositive entrante afin qu'elle se développe à partir du centre de l'écran. |
+
+::: footer
+Pour en savoir plus: [Slide Transitions](https://quarto.org/docs/presentations/revealjs/advanced.html#slide-transitions)
+:::
+
+## Tabulation {.smaller .scrollable transition="slide"}
+
+::: panel-tabset
+### complot
+
+```{r}
+library(ggplot2)
+ggplot(mtcars, aes(hp, mpg, color = am)) +
+  geom_point() +
+  geom_smooth(formula = y ~ x, method = "loess")
+```
+
+### Données
+
+```{r}
+knitr::kable(mtcars)
+```
+:::
+
+::: footer
+Pour en savoir plus: [Tabsets](https://quarto.org/docs/presentations/revealjs/#tabsets)
+:::
+
+## Diapositives interactives {.smaller transition="slide"}
+
+Inclure des widgets Jupyter et des htmlwidgets dans vos présentations
+
+```{r}
+#| echo: false
+#| fig-height: 5
+library(leaflet)
+leaflet() %>%
+  addTiles() %>%  # Add default OpenStreetMap map tiles
+  addMarkers(lng=174.768, lat=-36.852, popup="The birthplace of R")
+```
+
+::: footer
+Pour en savoir plus: [Jupyter widgets](https://quarto.org/docs/interactive/widgets/jupyter.html), [htmlwidgets](https://quarto.org/docs/interactive/widgets/htmlwidgets.html)
+:::
+
+## Diapositives interactives {.smaller transition="slide"}
+
+Transformez les présentations en applications avec Observable et Shiny. Utilisez la disposition des composants pour positionner les entrées et les sorties.
+
+```{r}
+ojs_define(actors = data.frame(
+  x = rnorm(100),
+  y = rnorm(100)
+))
+```
+
+```{ojs}
+//| panel: sidebar
+viewof talentWeight = Inputs.range([-2, 2], { value: 0.7, step: 0.01, label: "talent weight" })
+viewof looksWeight = Inputs.range([-2, 2], { value: 0.7, step: 0.01, label: "looks weight" })
+viewof minimum = Inputs.range([-2, 2], { value: 1, step: 0.01, label: "min fame" })
+```
+
+```{ojs}
+//| panel: fill
+import { plotActors } from './actors.js';
+plotActors(actors, talentWeight, looksWeight, minimum)
+```
+
+## Aperçu des liens
+
+Accédez aux liens hypertexte sans perturber le flux de votre présentation.
+
+Utilisez l'option `preview-links`pour ouvrir des liens dans un iframe au-dessus de vos diapositives. Essayez de cliquer sur le lien ci-dessous pour une démonstration:
+
+::: {style="text-align: center; margin-top: 1em"}
+[Matplotlib: Visualization with Python](https://matplotlib.org/){preview-link="true" style="text-align: center"}
+:::
+
+::: footer
+Pour en savoir plus: [Aperçu des liens](https://quarto.org/docs/presentations/revealjs/presenting.html#preview-links)
+:::
+
+## Tableau {chalkboard-buttons="true"}
+
+::: {style="margin-bottom: 0.9em;"}
+Dessin de forme libre et annotations de diapositives
+:::
+
+::: {layout="[1, 20]"}
+![](images/presentation-chalkboard.png){width="41"}
+
+Utilisez le bouton tableau en bas à gauche de la diapositive pour basculer le tableau.
+:::
+
+::: {layout="[1, 20]"}
+![](images/presentation-notes-canvas.png){width="41"}
+
+Utilisez le bouton de canevas Notes en bas à gauche de la diapositive pour basculer le dessin au-dessus de la diapositive active.
+:::
+
+Vous pouvez également appuyer pour basculer le tableau ou basculer la zone de dessin des notes `b` .
+
+::: footer
+Pour en savoir plus: [Tableau](https://quarto.org/docs/presentations/revealjs/presenting.html#chalkboard)
+:::
+
+## et plus encore...
+
+-   [Touché](https://quarto.org/docs/presentations/revealjs/advanced.html#touch-navigation) optimisé (les présentations ont fière allure sur mobile, balayez pour naviguer dans les diapositives)
+-   [Pied de page et logo](https://quarto.org/docs/presentations/revealjs/#footer-logo) (spécifiez éventuellement un pied de page personnalisé par diapositive)
+-   [Glissement automatique](https://quarto.org/docs/presentations/revealjs/presenting.html#auto-slide) (parcourir les diapositives automatiquement, sans aucune intervention de l'utilisateur)
+-   [Multiplex](https://quarto.org/docs/presentations/revealjs/presenting.html#multiplex) (permet à votre public de suivre les diapositives de la présentation que vous contrôlez sur son propre téléphone, tablette ou ordinateur portable).
+
+::: footer
+Pour en savoir plus: [Présentations Quarto](https://quarto.org/docs/presentations/revealjs/)
+:::
+
+## et si on se separe {.smaller}
+
+::: columns
+::: {.column width="55%"}
+::: columns
+::: {.column width="53%"}
+![](images/image15.jpeg)
+
+<div>
+
+::: {style="font-size:9pt;"}
+*Nous sommes le groupe 4* . *Notre objectif est de vous présenter le 1% de nos 1% en ce qui concerne **R-quarto***
+:::
+
+</div>
+:::
+:::
+:::
+
+::: {.column width="45%"}
+#### l'équipe
+
+| Noms         | Classe    | Sex |
+|--------------|-----------|-----|
+| durel valdes | Ise maths | M   |
+| alex         | isep      | M   |
+| moustapha    | ise eco   | M   |
+
+*Sous l'encadrement de :* **M. ABOUBACAR HEMA**
+:::
+:::
+
+*Nous tenons à vous remercier pour votre écoute. veuillez nous accorder encore 10min pour* o*vous montrer le livre*

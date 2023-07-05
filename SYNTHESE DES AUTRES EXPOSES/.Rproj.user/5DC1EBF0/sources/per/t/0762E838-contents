@@ -1,0 +1,13 @@
+## JANITOR  « homme à tout faire »
+
+Le package Janitor est un ensemble de fonctions qui permettent d'améliorer la manipulation et le formatage des données dans les data.frames. Certaines des principales fonctions du package Janitor sont:
+
+-   **Intérêt** : le principal intérêt du package JANITOR est de permettre d'effectuer des opérations sur des tableaux tels que des tableaux de contingences.
+
+-   **Fonctions** : il a pour principales fonctions :
+
+    -   **Le nettoyage des données** : pour ce faire elle utilise les fonctions telles que : *clean_names, compare_df_cols, make_clean_names, remove_empty, remove_constant, get_dupes, etc.*
+
+    -   **L'exploration des données** : cela consiste à parcourir la base de données pour voir ce qui est anormale et le supprimer. Cela nécessite notamment quelques fonctions telles que *: tabyl, adorn_totals, adorn_percentages, adorn_pct_formatting, adorn_ns, adorn_title.*
+
+-   **Limites** : JANETOR ne peut pas faire des tableaux et doit faire appel à d'autre packages. De plus, il ne peut pas combiner trois variables.

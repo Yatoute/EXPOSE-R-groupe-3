@@ -1,0 +1,56 @@
+---
+title: "Python dans R: le package Reticulate"
+---
+
+## Introduction
+
+R et Python sont deux langages de programmation populaires, chacun étant conçu pour répondre à des besoins spécifiques des utilisateurs. R est réputé pour ses capacités avancées en analyse statistique, manipulation et visualisation des données, tandis que Python est davantage orienté vers la data science, le développement d'applications web et l'automatisation/scripting. Face à cette diversité de fonctionnalités, il est souvent difficile de choisir entre les deux langages. Une approche idéale consiste à combiner les deux langages afin de bénéficier de leurs points forts respectifs.C'est dans cette optique que le package Reticulate pour R a été développé.
+
+## Etapes de configuration d'un environnement python sur R
+
+-   Phase 1 : Installer le package Reticulate sur R.
+
+```{=html}
+<!-- -->
+```
+-   Phase 2 : Installer python sur votre machine si cela n'est pas encore fait.
+
+-   Phase 3 : Configurer l'environnement python : On peut le faire de trois manières :
+
+    (i) Utiliser l'environnement python de votre système :
+
+```{r eval = FALSE}
+reticulate::use_python("emplacement/de/python/dans/votre/machine")
+```
+
+-   
+
+    (ii) Utiliser un environnement:
+
+```{r eval = FALSE}
+virtualenv_create("mon/virtual/env")
+```
+
+-   
+
+    (iii) Utiliser un environnement Conda
+
+```{r eval = FALSE}
+reticulate::use_condaenv("nom/de/environnement/conda")
+```
+
+## Comment utiliser python sur R ?
+
+Après avoir configurer notre environnement python sur R, on peut utiliser python sur R de différentes manières :
+
+-   reticulate::py_run_file () : exécuter un scripte python sur R
+
+-   reticulate::py_install() & reticulate::import() : Installer et importer des modules python
+
+-   reticulate::source_python() : référérencement d'un script python afin d'utiliser les fonctions qui y sont
+
+-   Ecrire exécuter un code python sur R-markdown dans un chunk python
+
+-   reticulate :: py_run_string() : exécuter du code python dans un script R avec la fonction
+
+-   reticulate::r_to_py() & reticulate::py_to_r() : convertir un objet R en python & vice versa

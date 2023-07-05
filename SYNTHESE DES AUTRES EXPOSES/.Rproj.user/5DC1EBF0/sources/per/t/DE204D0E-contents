@@ -1,0 +1,29 @@
+project:
+  type: book
+
+book:
+  title: "SYNTHESE DES EXPOSES DE R"
+  author: "Yatoute MINTOAMA - Richard GOZAN - Isabelle Danielle MOSSE"
+  date: "05/07/2023"
+  chapters:
+    - index.qmd
+    - Janit.qmd
+    - GtSum.qmd
+    - Rmarkdown.qmd
+    - RVE.qmd
+    - tm.qmd
+    - CP.qmd
+    - SE.qmd
+    - Ret.qmd
+    - Shin.qmd
+
+bibliography: references.bib
+
+format:
+  html:
+    theme: cosmo
+  pdf:
+    documentclass: scrreprt
+
+editor: visual
+

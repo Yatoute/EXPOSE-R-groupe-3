@@ -1,0 +1,18 @@
+{
+  "hash": "c4dc6bd76f88a1333748f8648fcbb4c9",
+  "result": {
+    "markdown": "# R vers Excel\n\nPour manipuler des données entre R et Excel, plusieurs packages et fonctions sont utilisés. Ces packages et fonctions permettent d'importer des données depuis Excel vers R, d'exporter des données depuis R vers Excel, et de manipuler des fichiers Excel en effectuant des opérations telles que l'écriture de données, l'ajout d'en-têtes, de paragraphes, de tableaux et de graphiques dans les feuilles de calcul Excel.\n\n## Importation des données depuis Excel vers R :\n\nPackage : readxl\n\nFonction : read_excel()\n\nExemple :\n\n\n\n::: {.cell}\n\n```{.r .cell-code}\ndata <- read_excel(\"chemin/vers/votre/fichier.xlsx\", sheet = \"nom_de_la_feuille\")\n```\n:::\n\n\n\n## Exportation des données depuis R vers Excel :\n\nPackage : writexl\n\nFonction : write_xlsx()\n\nExemple :\n\n\n\n::: {.cell}\n\n```{.r .cell-code}\nwrite_xlsx(data, path = \"chemin/vers/votre/fichier.xlsx\")\n```\n:::\n\n\n\nCe package fournit aussi la fonction **writeData()** permettant d'écrire des données dans un fichier Excel;\n\n## Manipulation avancée de fichiers Excel :\n\nPackages :\n\n**openxlsx, xlsx et r2excel:** ils permettent de lire, d'écrire et de manipuler des fichiers Excel (.xlsx)\n\nPrincipales onctions : Il existe de nombreuses fonctions dont quelques unes sont :\n\n**createWorkbook()** : Crée un nouveau fichier Excel.\n\n**addWorksheet()** : Ajoute une nouvelle feuille de calcul à un fichier Excel existant.\n\n**add_sheet()** : Ajoute une nouvelle feuille de calcul à un fichier Excel existant.\n\n**add_table()** : Ajoute un tableau formaté à une feuille de calcul Excel existante.\n\n**xlsx.addHeader()** : Ajoute un en-tête à une feuille de calcul Excel.\n\n**xlsx.addParagraph()** : Ajoute un paragraphe à une feuille de calcul Excel.\n\n**xlsx.addTable()** : Ajoute un tableau à une feuille de calcul Excel.\n\n**xlsx.addPlot()** : Ajoute un graphique à une feuille de calcul Excel.\n\n**xlsx::saveWorkbook()** : Enregistre le fichier Excel.\n\n**xlsx.openFile()** : Ouvre le fichier Excel\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {
+      "knitr": [
+        "{\"type\":\"list\",\"attributes\":{},\"value\":[]}"
+      ]
+    },
+    "preserve": null,
+    "postProcess": false
+  }
+}

@@ -1,0 +1,25 @@
+# Introduction
+
+Nous nous proposons dans ce document de faire la synthèse des exposés que nous avons été amenés à faire dans le cadre de notre de cours de "Projet statistique sur R et Pyhton", dispensé par M. Aboubacar HEMA, Research Analyst à IFPRI. Les exposés portent sur les thèmes suivants qui sont abordés dans les différents chapitres :
+
+-   Package Janitor
+
+-   Package GtSummary
+
+-   Rmarkdown
+
+-   RQuarto
+
+-   R vers Excel
+
+-   Text Mining avec R
+
+-   Système d'équation
+
+-   Calcul parallèle
+
+-   Python sur R (package Reticulate)
+
+-   Cartographie avec R
+
+-   RShiny

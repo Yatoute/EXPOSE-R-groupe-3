@@ -1,0 +1,33 @@
+# Textming
+
+Le textmining est une méthode permettant d'analyser automatiquement des textes pour en extraire des informations utiles. Les packages les plus importants sont : **tidytext**, **dplyr**, **tm**, *ggplot2*, **wordcloud**, **ggraph**, **rwhatsapp**, **lubridate**.
+
+Pour se faire, plusieurs étapes sont nécessaires.
+
+## Cas d'une base de données
+
+-   Prétraitement du texte :
+
+Les packages **tidytext**, **dplyr** et **tm** sont utilisés pour effectuer le prétraitement du texte.
+
+Dans le package **tidytext** les fonctions *unnest_tokens* et *stop_words* sont utilisées respectivement pour diviser le texte en tokens et supprimer les mots vides.
+
+Différentes fonctions de manipulation de données du package dplyr sont utilisés ("filter", "count", "mutate", etc.).
+
+Le package *tm* offre une gamme de fonctions **tm_map** qui permettent d'appliquer des transformations sur des textes. Elle prend en entrée un texte et une ou plusieurs fonctions de transformation, telles que la suppression de la ponctuation(**removePunctuation**), des nombres(**removeNumbers**), des espaces(**stripWhitespace**), etc...
+
+-   Fréquence des mots ou des n-grammes : Le package *ggplot2* est utillisé pour afficher la fréquence des mots ou des n-grammes. On peut égalent créer une matrice terme-document en utilisant la fonction *DocumentTermMatrix* du package **tm**.
+-   Nuage de mots : Le package **wordcloud** est utilisé pour créer un nuage de mots représentant les mots les plus fréquents dans le texte.
+-   Réseau des mots : Le package **ggraph** est utlisé pour créer un réseau des mots, permettant de visualiser les relations entre les mots les plus fréquents.
+
+## Cas des messages WhatsApp, Facebook, Twitter ou un livre
+
+-   Chronologie des messages : A l'aide du package **rwhatsapp**, les messages dans des bases de données distinctes. Ensuite les packages **lubridate** et *ggplot2* sont utlisés pour visualiser la chronologie des messages.
+
+Les fonctions de manipulation de données du package *dplyr* sont utilisés pour réaliser les différentes étapes suivantes :
+
+-   Classement des ID selon le nombre de messages envoyés
+
+-   Mots les plus fréquents utilisés par chaque ID
+
+-   Comparaison des mots les plus fréquents entre les groupes

@@ -1,0 +1,18 @@
+{
+  "hash": "22bf64215fc47db42f2b914188a1b4e8",
+  "result": {
+    "markdown": "---\ntitle: \"Python dans R: le package Reticulate\"\n---\n\n\n\n## Introduction\n\nR et Python sont deux langages de programmation populaires, chacun étant conçu pour répondre à des besoins spécifiques des utilisateurs. R est réputé pour ses capacités avancées en analyse statistique, manipulation et visualisation des données, tandis que Python est davantage orienté vers la data science, le développement d'applications web et l'automatisation/scripting. Face à cette diversité de fonctionnalités, il est souvent difficile de choisir entre les deux langages. Une approche idéale consiste à combiner les deux langages afin de bénéficier de leurs points forts respectifs.C'est dans cette optique que le package Reticulate pour R a été développé.\n\n## Etapes de configuration d'un environnement python sur R\n\n-   Phase 1 : Installer le package Reticulate sur R.\n\n\n\n```{=html}\n<!-- -->\n```\n\n\n-   Phase 2 : Installer python sur votre machine si cela n'est pas encore fait.\n\n-   Phase 3 : Configurer l'environnement python : On peut le faire de trois manières :\n\n    (i) Utiliser l'environnement python de votre système :\n\n\n\n::: {.cell}\n\n```{.r .cell-code}\nreticulate::use_python(\"emplacement/de/python/dans/votre/machine\")\n```\n:::\n\n\n\n-   \n\n    (ii) Utiliser un environnement:\n\n\n\n::: {.cell}\n\n```{.r .cell-code}\nvirtualenv_create(\"mon/virtual/env\")\n```\n:::\n\n\n\n-   \n\n    (iii) Utiliser un environnement Conda\n\n\n\n::: {.cell}\n\n```{.r .cell-code}\nreticulate::use_condaenv(\"nom/de/environnement/conda\")\n```\n:::\n\n\n\n## Comment utiliser python sur R ?\n\nAprès avoir configurer notre environnement python sur R, on peut utiliser python sur R de différentes manières :\n\n-   reticulate::py_run_file () : exécuter un scripte python sur R\n\n-   reticulate::py_install() & reticulate::import() : Installer et importer des modules python\n\n-   reticulate::source_python() : référérencement d'un script python afin d'utiliser les fonctions qui y sont\n\n-   Ecrire exécuter un code python sur R-markdown dans un chunk python\n\n-   reticulate :: py_run_string() : exécuter du code python dans un script R avec la fonction\n\n-   reticulate::r_to_py() & reticulate::py_to_r() : convertir un objet R en python & vice versa\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {
+      "knitr": [
+        "{\"type\":\"list\",\"attributes\":{},\"value\":[]}"
+      ]
+    },
+    "preserve": null,
+    "postProcess": false
+  }
+}

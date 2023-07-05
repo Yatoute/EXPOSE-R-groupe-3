@@ -1,0 +1,19 @@
+---
+title: "Rshiny"
+---
+
+## Introduction
+
+Lorsque nous travaillons avec des variables dans une base de données, nous sommes souvent confrontés à la réalisation de statistiques. Souvent, nous devons écrire du code pour effectuer différentes actions sur nos variables, telles que le tri à plat, les croisements de variables ou la création de modèles en fonction de variables spécifiques. Cette tâche peut devenir fastidieuse lorsque nous devons répéter les mêmes actions pour plusieurs variables. De plus, il peut arriver que nous souhaitions simplement suivre la distribution d'une variable par rapport à une autre sans que cela apparaisse dans notre rapport ou document final. Pour remédier à cela, R Shiny nous offre la possibilité de créer des applications web interactives qui facilitent les analyses. Nous pouvons ainsi programmer nos variables et nos différents modèles, puis les choisir à la volée au lieu d'écrire du code à chaque fois.
+
+## Shiny : qu'est ce qu'un ça fait ?
+
+Shiny est un package R développé par RStudio qui permet de créer des applications web interactives. Avec Shiny, il est possible de construire des interfaces utilisateur dynamiques sans avoir besoin de connaissances approfondies en HTML, CSS ou JavaScript. Shiny suit un modèle ui-serveur, où le serveur exécute le code R pour générer les sorties dynamiques, tandis que l'interface utilisateur (navigateur web) affiche l'interface et permet aux utilisateurs d'interagir avec l'application. Shiny facilite la création d'applications web pour l'analyse de données, l'affichage de graphiques, l'exécution de modèles statistiques, etc., le tout directement depuis R.
+
+## Les différentes parties d'une application Shiny
+
+Une application Shiny se compose essentiellement de deux parties :
+
+-   **L'ui (interface utilisateur)** : cette partie comprend tout ce que nous voyons sur l'application. Elle gère l'aspect visuel et ce qui nous captive lorsque nous utilisons l'application. Si nous devions comparer une application Shiny à un être humain, cette partie serait son apparence physique.
+
+-   **Le serveur** : c'est le cerveau qui gère tous les calculs en arrière-plan et nous renvoie les résultats que nous voyons sur l'application.

@@ -1,0 +1,33 @@
+# Résolution de système d'équations
+
+Il existe différentes approches pour résoudre des systèmes d'équations non linéaires avec R
+
+## Méthodes directes
+
+Il y a principalement 3 packages
+
+### Le package RootSolve
+
+Ce package fournit la fonction pour résoudre des équations non linéaires multidimensionnelles, utilisant des méthodes itératives basées sur la méthode de Newton pour trouver les solutions.
+
+**Fonctionnalité** : Elle prend en entrée un vecteur de fonction d'équations non linéaires à résoudre, un vecteur initial et retourne un objet(liste) contenant les éléments **root**(la solution trouvée), **f.root**(valeurs des fonctions évaluées aux points de la solution), **iter**(nombre d'itérations effectuées) et **estim.precis**(estimation de la précision atteinte).
+
+Notons l'utilisation du symbole "\$" pour accéder à ces difféents élements
+
+### Le package nleqslv
+
+Ce package permet la résolution numérique de systèmes d'équations non linéaires multivariés. Il fournit principalement la fonction **nleqslv()** utilisant des méthodes itératives basées sur la méthode de Newton et de broyden(méthode par défaut).
+
+**Fonctionnalité:** Elle prend en entrée un vecteur de fonction d'équations non linéaires à résoudre, un vecteur initial, la méthode et retourne une liste contenant les éléments : **x**(solution trouvée), **fvec**(valeurs des fonctions évaluées aux points de la solution), **iter**(nombre d'itérations effectuées) et **d'autres élements**.
+
+Notons l'utilisation du symbole "\$" pour accéder à ces difféents élements
+
+### Le package pracma
+
+Il propose aussi des méthodes numériques pour résoudre des équations non linéaires. Par exemple, les fonctions **fsolve()** et **broyden()** en utilisant la méthode de Newton ou la méthode de Broyden,
+
+## Méthodes indirectes
+
+On peut résoudre un système d'équations non linéaires en le transformant en un problème d'optimisation. Les fonctions **optim()** dans le **package stats** et **optimx()** dans le **package optimx** sont utilisées pour résoudre le problème d'optimisation.
+
+**Fonctionnalité de la fonction optim():** Elle prend un entrée Un vecteur de valeurs initiales, la fonction objective à optimiser, la méthode d'optimisation à utiliser et renvoie une liste contenant les éléments : par(la solution optimale), value(la valeur optimale de la fonction objective obtenue), iterations(le nombre d'itérations) et d'autres éléments. Notons l'utilisation du symbole "\$" pour accéder à ces difféents élements.
